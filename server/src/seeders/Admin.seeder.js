@@ -9,12 +9,12 @@ const seedAdmin = async () => {
   await connectDB();
   console.log("database connecter ");
   
-  const adminPassword = await bcrypt.hash("Admin@123", 10);
+  const adminPassword = await bcrypt.hash("ketan@123", 10);
   const AdminUser = {
   fullName: "Admin User",
   dob: "1990-01-01", // example DOB, format depends on your needs
   gender: "Male",
-  email: "admin@mywebsite.com",
+  email: "ketankumar147856@gmail.com",
   phone: "9431897901",
   role: "Admin",
   idNumbers: ["ID123456789"], // array of strings

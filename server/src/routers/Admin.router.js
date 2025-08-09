@@ -1,8 +1,11 @@
-import express from express
+import express from "express"
+import { AdminLoginOtp,AdminLogin } from "../controllers/Admin..controller.js"
+
 
 const router=express.Router()
 
-router.get("/login",AdminLogin)
+router.get("/sendloginotp",AdminLoginOtp)
+router.post("/login",AdminLogin)
 
 
 
