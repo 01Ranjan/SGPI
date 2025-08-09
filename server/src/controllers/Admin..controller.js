@@ -2,6 +2,8 @@ import Admin from "../model/Admins.model.js";
 import sendEmail from "../utils/sendemail.js"
 
 export const AdminLoginOtp = async (req, res, next) => {
+  console.log(req.body);
+  
   const { email, uniqueId, password } = req.body;
   if (!email || !uniqueId || !password) {
     const error = new Error("All filds are required");
