@@ -1,6 +1,7 @@
  import dotenv from "dotenv"
  dotenv.config()
  import express from "express"
+ import cors from "cors"
  import connectDB from "./src/config/dbConnection.js"
  import AdminRouter from "./src/routers/Admin.router.js"
 const app = express()
@@ -10,7 +11,9 @@ const app = express()
 //json body parsing in express
 app.use(express.json())
 
- 
+
+// cros 
+ app.use(cors({origin: "http://localhost:5173", credentials: true }))
 
 
 //this is test rout

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import api from "../config/api";
+import { toast } from "react-hot-toast";
 
 export default function Login() {
   const [formData, setFormData] = useState({
@@ -11,11 +13,24 @@ export default function Login() {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
-  const handleSubmit = (e) => {
+  const handelOtp = async (e) => {
     e.preventDefault();
-    console.log("Form Data:", formData);
-    // Add API call here
+    console.log(formData);
+
+    try {
+      const res = await api.post("/admin/sendloginotp", formData);
+      toast.success(res.data.message);
+    } catch (error) {}
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      console.log(formData);
+      const res = await api.post("/admin/login", formData);
+
+      toast.success(res.data.message);
+    } catch (error) {}
   };
 
   return (
@@ -25,7 +40,7 @@ export default function Login() {
           Portal Login
         </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form className="space-y-4">
           {/* Unique ID */}
           <div>
             <label className="block text-gray-700 mb-1">Unique ID</label>
@@ -71,8 +86,8 @@ export default function Login() {
           {/* OTP */}
           <div className="flex justify-between w-full gap-4 align-baseline">
             <div>
-                <label className="block text-gray-700 mb-1">OTP</label>
-                <input
+              <label className="block text-gray-700 mb-1">OTP</label>
+              <input
                 type="text"
                 name="otp"
                 value={formData.otp}
@@ -80,20 +95,22 @@ export default function Login() {
                 placeholder="Enter OTP"
                 className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                 required
-                />
+              />
             </div>
             {/* send otp button */}
             <button
-                type="submit"
-                className="w-52 h-10 bg-blue-600 text-white mt-7 rounded-lg hover:bg-blue-700 transition duration-200"
+              type="submit"
+              onClick={handelOtp}
+              className="w-52 h-10 bg-blue-600 text-white mt-7 rounded-lg hover:bg-blue-700 transition duration-200"
             >
-                Send OTP
+              Send OTP
             </button>
           </div>
 
           {/* Submit Button */}
           <button
             type="submit"
+            onClick={handleSubmit}
             className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-200"
           >
             Login
