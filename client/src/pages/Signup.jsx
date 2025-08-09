@@ -62,7 +62,7 @@ export default function Signup() {
               value={formData.fullName}
               onChange={handleChange}
               placeholder="Enter your name"
-              className="w-full border rounded-lg p-2"
+              className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
@@ -75,7 +75,7 @@ export default function Signup() {
               name="dob"
               value={formData.dob}
               onChange={handleChange}
-              className="w-full border rounded-lg p-2"
+              className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
@@ -87,7 +87,7 @@ export default function Signup() {
               name="gender"
               value={formData.gender}
               onChange={handleChange}
-              className="w-full border rounded-lg p-2"
+              className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             >
               <option value="">-- Select Gender --</option>
@@ -106,7 +106,7 @@ export default function Signup() {
               value={formData.mobile}
               onChange={handleChange}
               placeholder="Enter your mobile no"
-              className="w-full border rounded-lg p-2"
+              className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
@@ -119,7 +119,7 @@ export default function Signup() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Enter your email"
-                className="w-full border rounded-lg p-2 "
+                className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
             />
             </div>
@@ -133,7 +133,8 @@ export default function Signup() {
               name="designation"
               value={formData.designation}
               onChange={handleChange}
-              className="w-full border rounded-lg p-2"
+              placeholder="Enter your designation"
+              className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
@@ -145,7 +146,8 @@ export default function Signup() {
               name="departmentId"
               value={formData.departmentId}
               onChange={handleChange}
-              className="w-full border rounded-lg p-2"
+              placeholder="Enter your department id"
+              className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
@@ -158,19 +160,20 @@ export default function Signup() {
               name="idNumber"
               value={formData.idNumber}
               onChange={handleChange}
-              className="w-full border rounded-lg p-2"
+              placeholder="Enter your id number"
+              className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
             {/* ID Image Upload */}
           <div>
-            <label className="block text-gray-700">ID Image</label>
+            <label className=" block text-gray-700">ID Image</label>
             <input
               type="file"
               name="idImage"
               accept="image/*"
               onChange={handleChange}
-              className="cursor-pointer px-4 py-2 text-gray-700 font-medium border rounded-lg shadow "
+              className="cursor-pointer px-4 py-2 text-gray-500 font-medium border border-gray-300 rounded-lg shadow "
 
               required
             />
@@ -184,7 +187,8 @@ export default function Signup() {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              className="w-full border rounded-lg p-2"
+              placeholder="Make a strong password"
+              className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
