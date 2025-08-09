@@ -2,6 +2,7 @@
  dotenv.config()
  import express from "express"
  import connectDB from "./src/config/dbConnection.js"
+ import AdminRouter from "./src/routers/Admin.router.js"
 const app = express()
 
  
