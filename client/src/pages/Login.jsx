@@ -1,7 +1,9 @@
 import { useState } from "react";
 import api from "../config/api";
 import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 export default function Login() {
+  const navigate=useNavigate()
   const [formData, setFormData] = useState({
     uniqueId: "",
     email: "",
@@ -29,6 +31,8 @@ export default function Login() {
       const res = await api.post("/admin/login", formData);
 
       toast.success(res.data.message);
+
+       navigate("/admin/dashboard")
     } catch (error) {}
   };
 
