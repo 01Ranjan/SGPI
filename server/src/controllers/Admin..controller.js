@@ -1,4 +1,5 @@
 import Admin from "../model/Admins.model.js";
+import generateToken from "../utils/authtoken.js";
 import sendEmail from "../utils/sendemail.js"
 
 export const AdminLoginOtp = async (req, res, next) => {
@@ -72,7 +73,11 @@ export const AdminLogin=async(req,res,next)=>{
       return res.status(404).json({ message: "please enter valid OTP" });
     }
 
+    const token = generateToken(user._id,user.role,res)
+
     res.status(200).json({ message: "login  sucessful" });
+    console.log(token);
+    
    } catch (error) {
     next(error)
    }
