@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "boxicons/css/boxicons.min.css"; // Import Boxicons CSS
-
+import {Link} from "react-router-dom"
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -14,11 +14,11 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <div className="flex justify-between items-center gap-10">
             <ul className="hidden md:flex space-x-6">
-            <li><a href="/" className="hover:underline">Home</a></li>
-            <li><a href="/about" className="hover:underline">About</a></li>
-            <li><a href="/article" className="hover:underline">Article</a></li>
-            <li><a href="/contact" className="hover:underline">Contact us</a></li>
-            <li><a href="/Login" className="hover:underline">Login</a></li>
+            <li><Link to="/" className="hover:underline">Home</Link></li>
+            <li><Link to="/about" className="hover:underline">About</Link></li>
+            <li><Link to="/article" className="hover:underline">Article</Link></li>
+            <li><Link to="/contact" className="hover:underline">Contact us</Link></li>
+            <li><Link to="/login" className="hover:underline">Login</Link></li>
             </ul>
         </div>
 
