@@ -14,7 +14,7 @@ export default function Login() {
   };
   const handelOtp = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    
 
     try {
       const res = await api.post("/admin/sendloginotp", formData);
@@ -25,7 +25,7 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log(formData);
+      
       const res = await api.post("/admin/login", formData);
 
       toast.success(res.data.message);
