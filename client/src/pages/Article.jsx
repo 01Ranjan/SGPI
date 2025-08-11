@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom"
 
 const articles = [
   {
@@ -7,7 +8,7 @@ const articles = [
     description: "The government has approved a new policy to improve infrastructure and development in rural areas...",
     date: "Aug 10, 2025",
     publishedBy: "Ministry of Infrastructure",
-    link: "#"
+    link: "/readmore"
   },
   {
     id: 2,
@@ -15,7 +16,7 @@ const articles = [
     description: "Updated security measures have been implemented to enhance cyber safety across all departments...",
     date: "Aug 8, 2025",
     publishedBy: "Cyber Security Division",
-    link: "#"
+    link: "/readmore"
   },
   {
     id: 3,
@@ -23,7 +24,7 @@ const articles = [
     description: "The Health Department has released its annual report focusing on public health improvements...",
     date: "Aug 5, 2025",
     publishedBy: "Ministry of Health",
-    link: "#"
+    link: "/readmore"
   },
   {
     id: 4,
@@ -31,7 +32,7 @@ const articles = [
     description: "New education reforms aim to modernize the curriculum and improve teacher training programs...",
     date: "Aug 2, 2025",
     publishedBy: "Ministry of Education",
-    link: "#"
+    link: "/readmore"
   },
   {
     title: "Defense Sector Updates National Security Plan",
@@ -39,7 +40,7 @@ const articles = [
       "The Defense Ministry announced an updated national security plan focusing on modern technology and intelligence upgrades...",
     date: "August 9, 2025",
     publishedBy: "Defense Ministry",
-    link: "#",
+    link: "/readmore",
   },
   {
     title: "Healthcare Reforms Announced",
@@ -47,7 +48,7 @@ const articles = [
       "The government has introduced healthcare reforms to make medical facilities more accessible in rural areas...",
     date: "August 8, 2025",
     publishedBy: "Health Ministry",
-    link: "#",
+    link: "/readmore",
   },
   {
     title: "Transport Infrastructure Expansion",
@@ -55,7 +56,7 @@ const articles = [
       "Plans for expanding the national highway network have been revealed to improve connectivity between major cities...",
     date: "August 7, 2025",
     publishedBy: "Transport Ministry",
-    link: "#",
+    link: "/readmore",
   },
   {
     title: "Environmental Protection Program Launched",
@@ -63,7 +64,7 @@ const articles = [
       "A nationwide environmental program has been launched to combat climate change and promote sustainability...",
     date: "August 6, 2025",
     publishedBy: "Environment Ministry",
-    link: "#",
+    link: "/readmore",
   },
   {
     title: "Digital Governance Improvements",
@@ -71,7 +72,7 @@ const articles = [
       "The government has announced upgrades to its e-governance platform for better public service delivery...",
     date: "August 5, 2025",
     publishedBy: "IT Ministry",
-    link: "#",
+    link: "/readmore",
   }
 ];
 
@@ -96,12 +97,12 @@ export default function Article() {
               <p className="text-gray-500 text-xs">Published on: {article.date}</p>
               <p className="text-gray-500 text-xs">Published by: {article.publishedBy}</p>
             </div>
-            <a
-              href={article.link}
+            <Link
+               to={article.link}
               className="mt-4 text-blue-600 hover:underline text-sm font-medium"
             >
               Read More →
-            </a>
+            </Link>
           </div>
         ))}
       </div>

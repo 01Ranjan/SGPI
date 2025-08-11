@@ -104,7 +104,7 @@ export default function Login() {
             <button
               type="submit"
               onClick={handelOtp}
-              className="w-52 h-10 bg-blue-600 text-white mt-7 rounded-lg hover:bg-blue-700 transition duration-200"
+              className="w-52 h-10  shadow-[#9f8f8f] shadow-[0px_3px_5px_2px] bg-blue-600 text-white mt-7 rounded-lg hover:bg-blue-700 transition duration-200 active:scale-95"
             >
               Send OTP
             </button>
@@ -114,7 +114,7 @@ export default function Login() {
           <button
             type="submit"
             onClick={handleSubmit}
-            className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-200"
+            className="w-full shadow-[#9f8f8f] shadow-[0px_3px_5px_2px] bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-200 active:scale-95 "
           >
             Login
           </button>

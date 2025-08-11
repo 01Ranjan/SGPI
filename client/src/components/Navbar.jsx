@@ -4,6 +4,10 @@ import {Link} from "react-router-dom"
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handelclick=()=>{
+    setIsOpen(false)
+  }
+
   return (
     <nav className=" text-white px-6 py-4 ">
       <div className="container mx-auto flex justify-between items-center">
@@ -33,11 +37,13 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <ul className="md:hidden flex flex-col bg-blue-900 px-4 py-3 space-y-2">
-          <li><a href="/" className="block hover:underline">Home</a></li>
-          <li><a href="/about" className="block hover:underline">About</a></li>
-          <li><a href="/services" className="block hover:underline">Services</a></li>
-          <li><a href="/contact" className="block hover:underline">Contact</a></li>
+        <ul className="md:hidden flex flex-col bg-blue-900 px-4 py-3 space-y-2 rounded-2xl ">
+          <li><Link to="/" className="block hover:underline" onClick={handelclick}>Home</Link></li>
+          <li><Link to="/about" className="block hover:underline" onClick={handelclick}>About</Link></li>
+          <li><Link to="/article" className="block hover:underline" onClick={handelclick}>Article</Link></li>
+          <li><Link to="/services" className="block hover:underline" onClick={handelclick}>Services</Link></li>
+          <li><Link to="/contact" className="block hover:underline" onClick={handelclick}>Contact</Link></li>
+          <li><Link to="/login" className="block hover:underline" onClick={handelclick}>login</Link></li>
         </ul>
       )}
     </nav>
