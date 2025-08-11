@@ -13,6 +13,8 @@ import Articledetails from "./components/Users/Articledetails"
 
 
 import Sidebar from "./components/Admin/sidebar";
+import Contact from "./pages/contact";
+import Footer from "./components/footer";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -23,15 +25,15 @@ function App() {
         <Toaster />
         <Navbar />
         <Routes>
-          <Route path="/login" element={<Login/>} />
           <Route path="/" element={<Home/>} />
           <Route path="/about" element={<About/>} />
           <Route path="/article" element={<Article/>} />
+          <Route path="/login" element={<Login/>} />
           <Route path="/admin/dashboard" element={<Sidebar/>} />
           <Route path="/readmore" element={<Articledetails/>} />
-
-
+          <Route path="/contact" element={<Contact/>} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </>
   );
