@@ -15,11 +15,10 @@ import Articledetails from "./components/Users/Articledetails"
  
 import Contact from "./pages/contact";
 import Footer from "./components/footer";
-<<<<<<< HEAD
 import AddPost from "./components/Admin/post";
-=======
 import AdminPannel from "./pages/AdminPannel";
->>>>>>> ed7a54906b5b5c2a61c5727cbc00ba482adbcc1a
+import RegisterPopup from "./components/Admin/Registerpopup"
+
 
 function App() {
   const [count, setCount] = useState(0);
@@ -37,7 +36,7 @@ function App() {
           <Route path="/admin/dashboard" element={<AdminPannel/>} />
           <Route path="/readmore" element={<Articledetails/>} />
           <Route path="/contact" element={<Contact/>} />
-          <Route path="/addpost" element={<AddPost/>} />
+          <Route path="/addpost" element={<RegisterPopup/>} />
           
           <Route path="/admin/dashboard/signup" element={<Signup/>} />
         </Routes>

@@ -4,6 +4,9 @@ export default function Contact() {
   return (
     <section className=" py-10 px-4">
       <div className="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6">
+        <button className="relative left-11/12 bx bx-x-cicle cursor-pointer">
+        <i className="bx bxs-x-circle text-3xl"></i>
+        </button>
         {/* Heading */}
         <h2 className="text-3xl font-bold text-blue-900 mb-2">Contact Us</h2>
         <p className="text-gray-600 mb-6 text-sm">

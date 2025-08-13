@@ -18,8 +18,8 @@ import {
 const Sidebar = ({ active, setActive }) => {
   return (
     <div>
-      <div className="bg-[#afc5e2] border-r-2">
-        <div className="w-100  min-h-[91.2vh] p-5 flex flex-col justify-between  bg-amber-100 ">
+      <div className="bg-[#afc5e2]  rounded-2xl">
+        <div className="w-100  min-h-[100.2vh] p-5 flex flex-col justify-between  bg-amber-100 rounded-lg">
           <div>
             <div className="border-b-2 pb-3 h-fit flex justify-center">
               <span className="text-2xl font-bold">Admin Dashboard</span>
