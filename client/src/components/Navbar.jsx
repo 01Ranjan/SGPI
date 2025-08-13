@@ -23,6 +23,8 @@ export default function Navbar() {
             <li><Link to="/article" className="hover:underline">Article</Link></li>
             <li><Link to="/contact" className="hover:underline">Contact us</Link></li>
             <li><Link to="/login" className="hover:underline">Login</Link></li>
+            <li><Link to="/addpost" className="hover:underline">add post</Link></li>
+
             </ul>
         </div>
 
@@ -41,7 +43,6 @@ export default function Navbar() {
           <li><Link to="/" className="block hover:underline" onClick={handelclick}>Home</Link></li>
           <li><Link to="/about" className="block hover:underline" onClick={handelclick}>About</Link></li>
           <li><Link to="/article" className="block hover:underline" onClick={handelclick}>Article</Link></li>
-          <li><Link to="/services" className="block hover:underline" onClick={handelclick}>Services</Link></li>
           <li><Link to="/contact" className="block hover:underline" onClick={handelclick}>Contact</Link></li>
           <li><Link to="/login" className="block hover:underline" onClick={handelclick}>login</Link></li>
         </ul>

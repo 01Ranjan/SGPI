@@ -37,7 +37,7 @@ export default function Articledetails() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 to-blue-300 p-6">
       {/* Breadcrumb */}
-      <nav className="text-sm text-gray-600 mb-4 flex items-center gap-2">
+      <nav className="text-sm hidden  text-gray-600 mb-4  items-center gap-2">
         <Link to="/" className="hover:text-blue-600 flex items-center gap-1">
           <i className="bx bx-home"></i> Home
         </Link>

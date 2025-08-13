@@ -30,23 +30,23 @@ const Home=()=>{
             {/* <!-- Filter Row --> */}
             <div class="max-w-3xl sm-hidden mx-auto mt-6  p-4 rounded-lg shadow flex flex-wrap gap-4 justify-center items-center">
             <h2 className="text-2xl font-bold">Filter by:-</h2>
-            <select class="px-4 py-2 border rounded-md  focus:outline-none focus:ring-2 focus:ring-yellow-400">
-                <option value="">Category</option>
-                <option>News</option>
-                <option>Documents</option>
-                <option>Articles</option>
+            <select class="px-4 py-2 border rounded-md  focus:outline-none focus:ring-2 focus:ring-yellow-400 ">
+                <option value="" className="bg-blue-800">Category</option>
+                <option value="" className="bg-blue-800">News</option>
+                <option value="" className="bg-blue-800">Documents</option>
+                <option value="" className="bg-blue-800">Articles</option>
             </select>
             <select class="px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400">
                 <option value="">Date Range</option>
-                <option>Last 7 Days</option>
-                <option>Last 30 Days</option>
-                <option>This Year</option>
+                <option value="" className="bg-blue-800">Last 7 Days</option>
+                <option value="" className="bg-blue-800">Last 30 Days</option>
+                <option value="" className="bg-blue-800">This Year</option>
             </select>
             <select class="px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400">
                 <option value="">Region</option>
-                <option>National</option>
-                <option>State</option>
-                <option>District</option>
+                <option value="" className="bg-blue-800">National</option>
+                <option value="" className="bg-blue-800">State</option>
+                <option value="" className="bg-blue-800">District</option>
             </select>
             </div>
 

@@ -15,6 +15,7 @@ import Articledetails from "./components/Users/Articledetails"
 import Sidebar from "./components/Admin/sidebar";
 import Contact from "./pages/contact";
 import Footer from "./components/footer";
+import AddPost from "./components/Admin/post";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -32,6 +33,8 @@ function App() {
           <Route path="/admin/dashboard" element={<Sidebar/>} />
           <Route path="/readmore" element={<Articledetails/>} />
           <Route path="/contact" element={<Contact/>} />
+          <Route path="/addpost" element={<AddPost/>} />
+
         </Routes>
         <Footer/>
       </BrowserRouter>
