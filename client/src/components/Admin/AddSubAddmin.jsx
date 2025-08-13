@@ -13,7 +13,7 @@
      idNumber: "",
      idImage: null,
      password: "",
-     departmentId: "",
+     departmentId: "", 
    });
  
    const handleChange = (e) => {
