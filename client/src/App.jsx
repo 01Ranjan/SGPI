@@ -17,7 +17,7 @@ import Contact from "./pages/contact";
 import Footer from "./components/footer";
 import AddPost from "./components/Admin/post";
 import AdminPannel from "./pages/AdminPannel";
-import RegisterPopup from "./components/Admin/Registerpopup"
+ 
 
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
           <Route path="/admin/dashboard" element={<AdminPannel/>} />
           <Route path="/readmore" element={<Articledetails/>} />
           <Route path="/contact" element={<Contact/>} />
-          <Route path="/addpost" element={<RegisterPopup/>} />
+       
           
          
         </Routes>

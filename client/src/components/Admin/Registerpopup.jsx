@@ -1,16 +1,22 @@
 import React from "react";
 
+function RegisterPopup({ isopen, onClose, formData }) {
+console.log(isopen);
 
- function RegisterPopup() {
-   
+  
+  if (!isopen) {return null};
+  
 
   return (
     <div className="fixed inset-0  bg-black/80 flex justify-center items-center z-50">
-    <div className="bg-white rounded-xl shadow-lg p-6 max-w-sm w-full">
-     <button className="relative left-11/12 bx bx-x-cicle cursor-pointer">
-     <i className="bx bx-x text-xl"></i>
-     </button>
-      <form >
+      <div className="bg-white rounded-xl shadow-lg p-6 max-w-sm w-full">
+        <button
+          className="relative left-11/12 bx bx-x-cicle cursor-pointer"
+          onClick={onClose}
+        >
+          <i className="bx bx-x text-xl" onClick={onClose}></i>
+        </button>
+        <form>
           {/* Unique ID */}
           <div>
             <label className="block text-gray-700 mb-1">Unique ID</label>
