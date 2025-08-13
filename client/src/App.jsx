@@ -12,9 +12,10 @@ import Article from "./pages/Article"
 import Articledetails from "./components/Users/Articledetails"
 
 
-import Sidebar from "./components/Admin/sidebar";
+ 
 import Contact from "./pages/contact";
 import Footer from "./components/footer";
+import AdminPannel from "./pages/AdminPannel";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -29,9 +30,10 @@ function App() {
           <Route path="/about" element={<About/>} />
           <Route path="/article" element={<Article/>} />
           <Route path="/login" element={<Login/>} />
-          <Route path="/admin/dashboard" element={<Sidebar/>} />
+          <Route path="/admin/dashboard" element={<AdminPannel/>} />
           <Route path="/readmore" element={<Articledetails/>} />
           <Route path="/contact" element={<Contact/>} />
+          <Route path="/admin/dashboard/signup" element={<Signup/>} />
         </Routes>
         <Footer/>
       </BrowserRouter>

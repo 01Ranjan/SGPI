@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   FaTachometerAlt,
   FaUser,
@@ -17,7 +18,7 @@ import {
 const Sidebar = ({ active, setActive }) => {
   return (
     <div>
-      <div className="bg-[#afc5e2]">
+      <div className="bg-[#afc5e2] border-r-2">
         <div className="w-100  min-h-[91.2vh] p-5 flex flex-col justify-between  bg-amber-100 ">
           <div>
             <div className="border-b-2 pb-3 h-fit flex justify-center">
@@ -38,7 +39,7 @@ const Sidebar = ({ active, setActive }) => {
                   className={`flex items-center gap-2 border p-3 rounded-lg text-lg hover:bg-blue-700 hover:text-white cursor-pointer ${
                     active === "profile" && "bg-amber-600 text-white"
                   }`}
-                  onClick={() => setActive("profile")}
+                  onClick={() => setActive("addsubadmin")}
                 >
                   <FaUser /> Add SubAdmin
                 </li>
