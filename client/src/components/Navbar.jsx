@@ -25,6 +25,8 @@ export default function Navbar() {
             <li><Link to="/login" className="hover:underline">Login</Link></li>
             <li><Link to="/addpost" className="hover:underline">add post</Link></li>
 
+
+
             </ul>
         </div>
 

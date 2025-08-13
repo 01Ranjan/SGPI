@@ -17,6 +17,11 @@ import Contact from "./pages/contact";
 import Footer from "./components/footer";
 import AddPost from "./components/Admin/post";
 import AdminPannel from "./pages/AdminPannel";
+<<<<<<< HEAD
+=======
+import RegisterPopup from "./components/Admin/Registerpopup"
+
+>>>>>>> 10c133026609290957410e1c25263a9e0e31e9eb
 
 function App() {
   const [count, setCount] = useState(0);

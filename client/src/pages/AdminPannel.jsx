@@ -18,7 +18,7 @@ const AdminPannel = () => {
     <>
       <div className="flex">
         <Sidebar active={active} setActive={setActive}  />
-        <div className="w-full bg-amber-100">
+        <div className="w-full">
           {active === "overview" && <Overview />}
           {active === "addsubadmin" && <AddSubAddmin />}
            
