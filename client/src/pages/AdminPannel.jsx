@@ -7,6 +7,7 @@ import AddSubAddmin from "../components/Admin/AddSubAddmin";
 import Sidebar from "../components/Admin/sidebar";
 import AddPost from "../components/Admin/post";
  
+import CustomerQueries from "../components/Admin/Queries" 
 
 const AdminPannel = () => {
   const navigate = useNavigate();
@@ -23,6 +24,8 @@ const AdminPannel = () => {
           {active === "overview" && <Overview />}
           {active === "addsubadmin" && <AddSubAddmin />}
           {active === "addpost" && <AddPost/>}
+          {active === "feedback" && <CustomerQueries/>}
+           
         </div>
       </div>
     </>
