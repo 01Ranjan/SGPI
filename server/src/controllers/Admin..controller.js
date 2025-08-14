@@ -1,6 +1,8 @@
 import Admin from "../model/Admins.model.js";
 import generateToken from "../utils/authtoken.js";
 import sendEmail from "../utils/sendemail.js"
+import cloudinary from "../config/cloudinary.js";
+import bcrypt from "bcrypt";
 
 export const AdminLoginOtp = async (req, res, next) => {
   console.log(req.body);
@@ -82,3 +84,100 @@ export const AdminLogin=async(req,res,next)=>{
     next(error)
    }
 }
+  
+export const AddSubAdmin = async (req, res, next) => {
+  try {
+    const currentUser = req.user; 
+
+    const {
+      fullName,
+      dob,
+      gender,
+      phone,
+      email,
+      post,
+      idNumber,
+      departmentIdNumber,
+      password,
+    } = req.body;
+
+    if (!currentUser) {
+      const error = new Error("Unauthorized — Please login again");
+      error.statusCode = 401;
+      return next(error);
+    }
+
+    console.log(req.body);
+    
+    
+    if (
+      !fullName ||
+      !dob ||
+      !gender ||
+      !phone ||
+      !email ||
+      !post ||
+      !idNumber ||
+      !departmentIdNumber ||
+      !password
+    ) {
+      const error = new Error("All  fields is required");
+      error.statusCode = 400;
+      return next(error);
+    }
+
+    // Check if email already exists
+    const existingUser = await Admin.findOne({ email });
+    if (existingUser) {
+      const error = new Error("Email already exists");
+      error.statusCode = 400;
+      return next(error);
+    }
+
+    // Handle ID Photo upload to Cloudinary
+    const photo = req.file;
+    let picture;
+    if (photo) {
+      const b64 = Buffer.from(photo.buffer).toString("base64");
+      const dataURI = `data:${photo.mimetype};base64,${b64}`;
+
+      const result = await cloudinary.uploader.upload(dataURI, {
+        folder: "subAdmins",
+        width: 500,
+        height: 500,
+        crop: "fill",
+      });
+      picture = result.secure_url;
+    }
+
+    console.log(picture);
+    
+
+    // Hash password
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Create new sub-admin
+    const newSubAdmin = await Admin.create({
+      fullName,
+      dob,
+      gender,
+      phone,
+      email,
+      post,
+      idNumbers: Array.isArray(idNumber) ? idNumber : [idNumber],
+      departmentIdNumber,
+      uniqueId: Date.now().toString(),
+      idPhotos: picture ? [picture] : [],
+      password: hashedPassword,
+      role: "subAdmin",
+      subAdmin: [],
+    });
+
+    res
+      .status(201)
+      .json({ message: "Sub-admin created successfully", data: newSubAdmin });
+  } catch (error) {
+    next(error);
+  }
+};
+

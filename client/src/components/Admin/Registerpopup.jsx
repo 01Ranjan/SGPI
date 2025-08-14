@@ -1,11 +1,34 @@
 import React from "react";
+import { toast } from "react-hot-toast";
+import api from "../../config/api";
+import { useState } from "react";
 
 function RegisterPopup({ isopen, onClose, formData }) {
-console.log(isopen);
+  const [adminRequiredData, setAdminRequiredData] = useState({
+    uniqueId:"",
+    password:"",
+    otp:"",
+  });
+  const handlePopupChange = (e) => {
+    const { name, value } = e.target;
+    setAdminRequiredData((prev) => ({ ...prev, [name]: value }));
+  };
+  const handalSubbmitFinalRegistation = async (e) => {
+    e.preventDefault();
+    try {
+      console.log(formData);
 
-  
-  if (!isopen) {return null};
-  
+      const res = await api.post("/admin/addsubadmin", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+
+      toast.success(res.data.message);
+    } catch (error) {}
+  };
+
+  if (!isopen) {
+    return null;
+  }
 
   return (
     <div className="fixed inset-0  bg-black/80 flex justify-center items-center z-50">
@@ -16,13 +39,15 @@ console.log(isopen);
         >
           <i className="bx bx-x text-xl" onClick={onClose}></i>
         </button>
-        <form>
+        <form onSubmit={handalSubbmitFinalRegistation}>
           {/* Unique ID */}
           <div>
             <label className="block text-gray-700 mb-1">Unique ID</label>
             <input
               type="text"
               name="uniqueId"
+              value={adminRequiredData.uniqueId}
+              onChange={handlePopupChange}
               placeholder="Enter your unique ID"
               className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
@@ -35,6 +60,8 @@ console.log(isopen);
             <input
               type="password"
               name="password"
+              value={adminRequiredData.password}
+              onChange={handlePopupChange}
               placeholder="Enter your password"
               className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
@@ -48,6 +75,8 @@ console.log(isopen);
               <input
                 type="text"
                 name="otp"
+                value={adminRequiredData.otp}
+                onChange={handlePopupChange}
                 placeholder="Enter OTP"
                 className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                 required

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Overview from "../components/Admin/Overview";
 import AddSubAddmin from "../components/Admin/AddSubAddmin";
 import Sidebar from "../components/Admin/sidebar";
- 
+import CustomerQueries from "../components/Admin/Queries" 
 
 const AdminPannel = () => {
   const navigate = useNavigate();
@@ -21,6 +21,7 @@ const AdminPannel = () => {
         <div className="w-full">
           {active === "overview" && <Overview />}
           {active === "addsubadmin" && <AddSubAddmin />}
+          {active === "feedback" && <CustomerQueries/>}
            
         </div>
       </div>
