@@ -7,6 +7,7 @@ import {
   FaLifeRing,
   FaCommentDots,
   FaSignOutAlt,
+  FaPlus,
 } from "react-icons/fa";
 
 //   const handleLogout = async () => {
@@ -18,8 +19,8 @@ import {
 const Sidebar = ({ active, setActive }) => {
   return (
     <div>
-      <div className="bg-[#afc5e2]  rounded-2xl">
-        <div className="w-100  min-h-[100.2vh] p-5 flex flex-col justify-between  bg-amber-100 rounded-lg">
+      <div className="bg-[#afc5e2] ">
+        <div className="w-90  min-h-[100vh] p-5 flex flex-col justify-between  bg-amber-100">
           <div>
             <div className="border-b-2 pb-3 h-fit flex justify-center">
               <span className="text-2xl font-bold">Admin Dashboard</span>
@@ -37,7 +38,7 @@ const Sidebar = ({ active, setActive }) => {
                 </li>
                 <li
                   className={`flex items-center gap-2 border p-3 rounded-lg text-lg hover:bg-blue-700 hover:text-white cursor-pointer ${
-                    active === "profile" && "bg-amber-600 text-white"
+                    active === "addsubadmin" && "bg-amber-600 text-white"
                   }`}
                   onClick={() => setActive("addsubadmin")}
                 >
@@ -53,11 +54,11 @@ const Sidebar = ({ active, setActive }) => {
                 </li>
                 <li
                   className={`flex items-center gap-2 border p-3 rounded-lg text-lg hover:bg-blue-700 hover:text-white cursor-pointer ${
-                    active === "support" && "bg-amber-600 text-white"
+                    active === "addpost" && "bg-amber-600 text-white"
                   }`}
-                  onClick={() => setActive("support")}
+                  onClick={() => setActive("addpost")}
                 >
-                  <FaLifeRing /> Support
+                  <FaPlus />Add new post
                 </li>
                 <li
                   className={`flex items-center gap-2 border p-3 rounded-lg text-lg hover:bg-blue-700 hover:text-white cursor-pointer ${

@@ -1,9 +1,6 @@
 import React from "react";
 
 function RegisterPopup({ isopen, onClose, formData }) {
-console.log(isopen);
-
-  
   if (!isopen) {return null};
   
 
