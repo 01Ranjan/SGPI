@@ -4,10 +4,8 @@ import api from "../../config/api";
 import { useState } from "react";
 
 function RegisterPopup({ isopen, onClose, formData }) {
-<<<<<<< HEAD
   if (!isopen) {return null};
   
-=======
   const [adminRequiredData, setAdminRequiredData] = useState({
     uniqueId:"",
     password:"",
@@ -33,7 +31,6 @@ function RegisterPopup({ isopen, onClose, formData }) {
   if (!isopen) {
     return null;
   }
->>>>>>> 6f46421938c6fc6db89945412082bbf8c6900d26
 
   return (
     <div className="fixed inset-0  bg-black/80 flex justify-center items-center z-50">
