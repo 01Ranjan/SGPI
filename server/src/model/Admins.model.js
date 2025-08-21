@@ -60,12 +60,14 @@ const AdminsSchema = new mongoose.Schema(
     },
     otpPasswordTime: {
       type: String,
-      
     },
-    subAdmin: {
-      type: [String],
-      required: true,
-    },
+   subAdmin: [
+  {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Admin", // referencing same Admin model
+  },
+],
+
   },
   { timestamps: true }
 );

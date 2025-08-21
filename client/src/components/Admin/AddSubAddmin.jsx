@@ -4,6 +4,7 @@ import RegisterPopup from "../Admin/Registerpopup";
 function AddSubAddmin() {
   const [IsOpean, setIsOpen] = useState(false);
   const [photos, setPhotos] = useState(null);
+  const formData = new FormData();
 
   const [subAdminData, setSubAdminData] = useState({
     fullName: "",
@@ -28,23 +29,7 @@ function AddSubAddmin() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const formData = new FormData();
-
-    formData.append("fullName", subAdminData.fullName);
-    formData.append("dob", subAdminData.dob);
-    formData.append("gender", subAdminData.gender);
-    formData.append("phone", subAdminData.phone);
-    formData.append("email", subAdminData.email);
-    formData.append("address", subAdminData.address);
-    formData.append("post", subAdminData.post);
-    formData.append("idNumbers[]", subAdminData.idNumber);
-    formData.append("departmentIdNumber", subAdminData.departmentIdNumber);
-    formData.append("password", subAdminData.password);
-
-    if (photos) {
-      formData.append("idPhotos", photos);
-    }
+   
 
     setIsOpen(true);
   };
@@ -187,10 +172,12 @@ function AddSubAddmin() {
       </div>
 
       {/* Popup */}
+
       <RegisterPopup
         isopen={IsOpean}
         onClose={() => setIsOpen(false)}
-        formData={{ ...subAdminData, idPhotos: photos }}
+        NewAdminData={subAdminData}
+        adminPhoto = {photos}
       />
     </div>
   );
