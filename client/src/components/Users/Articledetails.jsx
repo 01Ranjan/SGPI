@@ -57,10 +57,7 @@ export default function Articledetails() {
         <span>/</span>
         <span className="font-semibold">{article.title}</span>
       </nav>
-
-      {/* Ice Glass Container */}
       <div className="bg-white/30 backdrop-blur-lg rounded-2xl shadow-lg p-6 max-w-5xl mx-auto">
-        {/* Header */}
         <h1 className="text-3xl font-bold text-gray-900 mb-2">{article.title}</h1>
         <p className="text-gray-700 mb-1 flex items-center gap-2">
           <i className="bx bx-user text-lg"></i>
@@ -89,7 +86,7 @@ export default function Articledetails() {
           <h1 className="text-2xl font-bold">Statement</h1>
           <p>{article.content}</p>
         </div>
-        {/* Document Preview (Non-downloadable) */}
+        {/* Document  */}
         <div className="mb-6">
           <h2 className="text-lg font-semibold mb-2 flex items-center gap-2">
             <i className="bx bx-file"></i> Official Document

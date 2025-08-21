@@ -23,15 +23,11 @@ export default function Navbar() {
             <li><Link to="/article" className="hover:underline">Article</Link></li>
             <li><Link to="/contact" className="hover:underline">Contact us</Link></li>
             <li><Link to="/login" className="hover:underline">Login</Link></li>
-            <li><Link to="/addpost" className="hover:underline">add post</Link></li>
-
-
-
             </ul>
         </div>
 
         {/* Mobile Menu Toggler */}
-        <button 
+        <button  
           className="md:hidden text-3xl"
           onClick={() => setIsOpen(!isOpen)}
         >

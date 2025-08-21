@@ -23,7 +23,7 @@ const Sidebar = ({ active, setActive }) => {
         <div className="w-90  min-h-[100vh] p-5 flex flex-col justify-between  bg-amber-100">
           <div>
             <div className="border-b-2 pb-3 h-fit flex justify-center">
-              <span className="text-2xl font-bold">Admin Dashboard</span>
+              <span className="text-2xl font-bold">Sub-admin Dashboard</span>
             </div>
 
             <div className="py-8 px-5">
@@ -42,7 +42,7 @@ const Sidebar = ({ active, setActive }) => {
                   }`}
                   onClick={() => setActive("addsubadmin")}
                 >
-                  <FaUser /> Add SubAdmin
+                  <FaUser /> Add Officers
                 </li>
                 <li
                   className={`flex items-center gap-2 border p-3 rounded-lg text-lg hover:bg-blue-700 hover:text-white cursor-pointer ${

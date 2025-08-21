@@ -3,6 +3,9 @@ import { toast } from "react-hot-toast";
 import api from "../../config/api";
 
 function RegisterPopup({ isopen, onClose, NewAdminData, adminPhoto }) {
+function RegisterPopup({ isopen, onClose, formData }) {
+  if (!isopen) {return null};
+  
   const [adminRequiredData, setAdminRequiredData] = useState({
     uniqueId: "",
     password: "",

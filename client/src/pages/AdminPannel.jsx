@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import Overview from "../components/Admin/Overview";
 import AddSubAddmin from "../components/Admin/AddSubAddmin";
 import Sidebar from "../components/Admin/sidebar";
+import AddPost from "../components/Admin/post";
+ 
 import CustomerQueries from "../components/Admin/Queries" 
 
 const AdminPannel = () => {
@@ -18,9 +20,10 @@ const AdminPannel = () => {
     <>
       <div className="flex">
         <Sidebar active={active} setActive={setActive}  />
-        <div className="w-full">
+        <div className="w-full h-screen overflow-y-auto">
           {active === "overview" && <Overview />}
           {active === "addsubadmin" && <AddSubAddmin />}
+          {active === "addpost" && <AddPost/>}
           {active === "feedback" && <CustomerQueries/>}
            
         </div>
